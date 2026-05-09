@@ -1,0 +1,51 @@
+JUDUL PROYEK: SISTEM ABSENSI MAHASISWA BERBASIS MOBILE DENGAN TEKNOLOGI GPS
+
+1. ANALISIS
+1.1 Analisis Masalah
+Sistem absensi manual memiliki risiko kecurangan yang tinggi seperti titip absen dan proses rekapitulasi data yang memakan waktu lama bagi dosen dan admin.
+
+1.2 Analisis Kebutuhan Fungsional
+- Sistem dapat mendeteksi koordinat lokasi mahasiswa secara otomatis melalui GPS.
+- Sistem menerapkan Geofencing untuk membatasi radius absensi hanya di area kampus.
+- Mahasiswa dapat melakukan absen masuk dan keluar melalui perangkat mobile.
+- Dosen dapat memantau kehadiran mahasiswa secara real-time.
+
+1.3 Analisis Kebutuhan Non-Fungsional
+- Keamanan: Setiap pengguna harus login menggunakan akun yang valid.
+- Akurasi: Data lokasi GPS harus memiliki presisi tinggi untuk validasi geofencing.
+
+
+2. DESIGN
+2.1 Perancangan Aktor (Use Case)
+- Mahasiswa: Login, melakukan absensi, dan melihat riwayat kehadiran.
+- Dosen: Melihat daftar hadir kelas dan memverifikasi lokasi mahasiswa.
+- Admin: Mengelola basis data mahasiswa, jadwal, dan memelihara sistem.
+
+2.2 Alur Kerja Sistem (Activity Diagram)
+- Mahasiswa login dan menekan tombol absen pada aplikasi.
+- Sistem meminta akses lokasi dan mengambil koordinat GPS perangkat.
+- Sistem membandingkan posisi mahasiswa dengan radius kampus yang ditentukan.
+- Jika berada di dalam area, data absensi disimpan ke database. Jika di luar, sistem menampilkan peringatan gagal.
+
+2.3 Desain Antarmuka (UI)
+- Halaman Login: Form input username dan password.
+- Dashboard Mahasiswa: Menampilkan peta lokasi saat ini dan tombol absen.
+- Panel Dosen: Tabel kehadiran dengan indikator status lokasi mahasiswa.
+
+
+3. IMPLEMENTASI
+3.1 Teknologi yang Digunakan
+- Bahasa Pemrograman: Digunakan untuk logika sistem dan integrasi API lokasi.
+- Database: MySQL untuk penyimpanan data master dan log riwayat absensi.
+- Geolocation API: Layanan untuk mendapatkan koordinat latitude dan longitude.
+
+3.2 Struktur Folder Repository
+- /config: Berisi file koneksi database.
+- /src: Berisi kode sumber utama aplikasi.
+- index.php: Halaman utama aplikasi.
+
+3.3 Rencana Kerja
+- Tahap 1: Analisis kebutuhan dan perancangan skema database.
+- Tahap 2: Pembuatan antarmuka pengguna dan fitur autentikasi.
+- Tahap 3: Implementasi fitur pelacakan GPS dan logika Geofencing.
+- Tahap 4: Pengujian sistem secara langsung dan perbaikan bug.
